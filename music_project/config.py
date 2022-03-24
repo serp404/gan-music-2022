@@ -7,6 +7,7 @@ class TaskConfig:
     n_train_iters: int = 200
     n_val_iters: int = 20
     max_wav_len: int = 8192
+    mel_length: int = 31
     dataloaders_params: tp.Dict[str, tp.Any] = {
         "batch_size": 32,
         "train_size": 0.8,

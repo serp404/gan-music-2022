@@ -11,7 +11,7 @@ class MusicDataset(torch.utils.data.Dataset):
     def __init__(self, data_path: str) -> None:
         super().__init__()
         self.data_path = data_path
-        self.wav_files = os.listdir(data_path)
+        self.wav_files = [file for file in os.listdir(data_path) if file.endswith(".wav")]
         self.mel_converter = MelSpectrogram()
 
     def __getitem__(self, idx: int) -> tp.Tuple[Tensor, Tensor]:
